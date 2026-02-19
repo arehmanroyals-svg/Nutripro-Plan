@@ -1,0 +1,5 @@
+{
+  "name": "NutriPlan Pro",
+  "description": "An elite metabolic Indian meal planner powered by Groq's Llama-3.3 engine for real-time metabolic analysis and goal tracking.",
+  "requestFramePermissions": []
+}
