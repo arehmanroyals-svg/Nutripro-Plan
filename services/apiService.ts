@@ -2,7 +2,7 @@
 import { SelectedIngredient, MealStats, AIAnalysisResult, AISearchResult, IngredientCategory, UserGoal } from "../types";
 
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
-const GROQ_API_KEY = "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";
+const GROQ_API_KEY = "";
 
 /**
  * Helper to call Groq with JSON mode enabled
