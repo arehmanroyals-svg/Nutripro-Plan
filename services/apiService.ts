@@ -8,22 +8,17 @@ const GROQ_API_KEY = "";
  * Helper to call Groq with JSON mode enabled
  */
 const callGroq = async (system: string, user: string) => {
-  const response = await fetch(GROQ_URL, {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${GROQ_API_KEY}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      model: "llama-3.3-70b-versatile",
-      messages: [
-        { role: "system", content: `${system}. You MUST return valid JSON. Accuracy is paramount.` },
-        { role: "user", content: user }
-      ],
-      response_format: { type: "json_object" },
-      temperature: 0.1 // Low temperature for high factual accuracy
-    })
-  });
+  const response = await fetch("/api/groq", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    system,
+    user,
+  }),
+});
+
 
   if (!response.ok) {
     const error = await response.json();
